@@ -21,27 +21,31 @@ const list = [
 const listDone = [];
 
 // nome eatrtto? no quindi è false 
-productToTake = false;
+let productToTake = false;
 
-while ( !productToTake ) {
+while( !productToTake ) {
   
   // estraggo un numero (max num = lunghezza elementi lista) che associo agli elementi della lista 
   const numRan = Math.floor( Math.random () * list.length );
-  let productEx = list [numRan];
-
-  // pusho il prodotto estratto nell arrey vuota 
-
-  listDone.push('productEx');
-
-  // verifico se è presente nella lista dgli estratti
-  productToTake = !listDone.includes(productEx);
+  let productEx = list[numRan];
 
   
-  //stampo in html il prodotto estratto
+  // pusho il prodotto estratto nell arrey vuota 
+  listDone.push(productEx);
+  console.log(listDone)
+  /* if ( productEx ){
+    ;
+  }*/
+  
+  //stampo in html dentro all ul .list il prodotto estratto
   const listCourses = document.querySelector('.list' );
-  listCourses.innerHTML = `<li>${productEx}</li>`;
+  listCourses.innerHTML = `<ul><li>${productEx}</li> </ul>`;
+  
+  // verifico se è presente nella lista dgli estratti
+ /*productToTake = !listDone.includes(productEx);*/
 
-  //il loop si ferma quando il prodotto estratto è 
-  productEx = true;
+  if (listDone.length === list.length){
+    productToTake = true; 
+  }
 };
 
