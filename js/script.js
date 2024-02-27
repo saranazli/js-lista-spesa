@@ -29,23 +29,20 @@ while( !productToTake ) {
   const numRan = Math.floor( Math.random () * list.length );
   let productEx = list[numRan];
 
+  // pusho il prodotto estratto nell arrey vuota se non è inclusa già
+  if ( !listDone.includes(productEx)) {
+    listDone.push(productEx);
+    console.log(listDone);
+  };
   
-  // pusho il prodotto estratto nell arrey vuota 
-  listDone.push(productEx);
-  console.log(listDone)
-  /* if ( productEx ){
-    ;
-  }*/
-  
-  //stampo in html dentro all ul .list il prodotto estratto
-  const listCourses = document.querySelector('.list' );
-  listCourses.innerHTML = `<ul><li>${productEx}</li> </ul>`;
-  
-  // verifico se è presente nella lista dgli estratti
- /*productToTake = !listDone.includes(productEx);*/
-
+  //l condizione nella quale si ferma il loop
   if (listDone.length === list.length){
     productToTake = true; 
   }
 };
+
+  //stampo in html dentro all ul .list il prodotto estratto
+  const listCourses = document.querySelector('.list' );
+  listCourses.innerHTML = `<li>${listDone}</li>`;
+
 
