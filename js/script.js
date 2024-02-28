@@ -13,10 +13,8 @@ const list = [
 let counter = 0;
 
 const listCourses = document.querySelector('.list' );
-console.log(listCourses);
 
-
- while( counter < list.length ) {
+while( counter < list.length ) {
 
   listCourses.innerHTML += `<li>${list[counter]}</li>`;
 
